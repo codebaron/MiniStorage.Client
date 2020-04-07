@@ -1,18 +1,18 @@
-<form class="form-horizontal" fn="login" on="submit">
-    <h2 id="title">STORAGE MANAGER</h2>
-    <br>
-    <div class="control-group">
-        <div class="controls">
-            <input id="username" type="text" placeholder="username" autofocus="true"/>
+<form class="container">
+    <div class="row align-items-center">
+        <div class="col align-self-center center-body">
+            <img class="center-body" src="assets/images/logo_transparent.png" width="360" height="360">
+        </div>        
+    </div>
+    <div class="row align-items-center">
+        <div class="col align-self-center">
+            <div class="form-group">
+                <input class="form-control" id="emailInput" type="text" placeholder="email address" autofocus="true"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="passwordInput" type="password" placeholder="password"/>
+            </div>
+            <button type="submit" class="btn btn-primary">LOGIN</button>
         </div>
     </div>
-    <br>
-    <div class="control-group">
-        <div class="controls">
-            <input id="password" type="text" placeholder="password"/>
-        </div>
-    </div>
-    <br>
-    <LinkTo @route="dashboard">LOGIN</LinkTo>
-    {{!--<button type="submit" class="btn">LOGIN</button>--}}
 </form>
