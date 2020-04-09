@@ -6,3 +6,18 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.theme-dark {
+    background-color: #47555e;
+}
+
+.theme-light {
+    background-color: #7aa5d2;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-right: 5px;
+}
