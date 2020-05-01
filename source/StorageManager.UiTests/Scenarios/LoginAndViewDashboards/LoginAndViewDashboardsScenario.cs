@@ -17,7 +17,7 @@ namespace StorageManager.UiTests.Scenarios.LoginAndViewDashboards
             Ui.EnterUsername(input.Codebaron.Username)
               .EnterPassword(input.Codebaron.Password)
               .ClickLogin()
-            ////.Verify(IsMainDashboard)
+              ////.Verify(IsMainDashboard)
               .ClickRentalsMenu()
             ////.Verify(IsRentalsDashboard)
             .ClickCustomersMenu()

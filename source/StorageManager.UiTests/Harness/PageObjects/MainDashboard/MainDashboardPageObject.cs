@@ -11,26 +11,22 @@ namespace StorageManager.UiTests.PageObjects
 
     public class MainDashboardPageObject : BasePageObject
     {
-        private readonly IWebDriver webDriver;
-        private readonly IPageObjectFactory pageObjectFactory;
-
         public MainDashboardPageObject(IWebDriver webDriver, IPageObjectFactory pageObjectFactory)
+            : base(webDriver, pageObjectFactory)
         {
-            this.webDriver = webDriver;
-            this.pageObjectFactory = pageObjectFactory;
         }
 
-        public IWebElement HomeMenuLink => this.webDriver.FindElement(By.Id("homeMenuLink"));
+        public IWebElement HomeMenuLink => this.WebDriver.FindElement(By.Id("homeMenuLink"));
 
-        public IWebElement RentalsMenuLink => this.webDriver.FindElement(By.Id("rentalsMenuLink"));
+        public IWebElement RentalsMenuLink => this.WebDriver.FindElement(By.Id("rentalsMenuLink"));
 
-        public IWebElement CustomersMenuLink => this.webDriver.FindElement(By.Id("customersMenuLink"));
+        public IWebElement CustomersMenuLink => this.WebDriver.FindElement(By.Id("customersMenuLink"));
 
-        public IWebElement StoreMenuLink => this.webDriver.FindElement(By.Id("storeMenuLink"));
+        public IWebElement StoreMenuLink => this.WebDriver.FindElement(By.Id("storeMenuLink"));
 
-        public IWebElement AdminMenuLink => this.webDriver.FindElement(By.Id("adminMenuLink"));
+        public IWebElement AdminMenuLink => this.WebDriver.FindElement(By.Id("adminMenuLink"));
 
-        public IWebElement LogoutButton => this.webDriver.FindElement(By.Id("logoutButton"));
+        public IWebElement LogoutButton => this.WebDriver.FindElement(By.Id("logoutButton"));
 
         public MainDashboardPageObject ClickHomeIcon()
         {
@@ -71,7 +67,7 @@ namespace StorageManager.UiTests.PageObjects
         {
             LogoutButton.Click();
 
-            return this.pageObjectFactory.Create<LoginPageObject>();
+            return this.PageObjectFactory.Create<LoginPageObject>();
         }
     }
 }

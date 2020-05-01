@@ -11,20 +11,16 @@ namespace StorageManager.UiTests.PageObjects
 
     public class LoginPageObject : BasePageObject
     {
-        private readonly IWebDriver webDriver;
-        private readonly IPageObjectFactory pageObjectFactory;
-
         public LoginPageObject(IWebDriver webDriver, IPageObjectFactory pageObjectFactory)
+            : base(webDriver, pageObjectFactory)
         {
-            this.webDriver = webDriver;
-            this.pageObjectFactory = pageObjectFactory;
         }
 
-        public IWebElement UsernameTextBox => this.webDriver.FindElement(By.Id("emailInput"));
+        public IWebElement UsernameTextBox => this.WebDriver.FindElement(By.Id("emailInput"));
 
-        public IWebElement PasswordTextBox => this.webDriver.FindElement(By.Id("passwordInput"));
+        public IWebElement PasswordTextBox => this.WebDriver.FindElement(By.Id("passwordInput"));
 
-        public IWebElement LoginButton => this.webDriver.FindElement(By.Id("loginButton"));
+        public IWebElement LoginButton => this.WebDriver.FindElement(By.Id("loginButton"));
 
         public LoginPageObject EnterUsername(string username)
         {
@@ -44,7 +40,7 @@ namespace StorageManager.UiTests.PageObjects
         {
             this.LoginButton.Click();
 
-            return this.pageObjectFactory.Create<MainDashboardPageObject>();
+            return this.PageObjectFactory.Create<MainDashboardPageObject>();
         }
     }
 }
