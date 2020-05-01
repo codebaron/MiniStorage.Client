@@ -7,8 +7,9 @@ namespace StorageManager.UiTests.PageObjects
 {
     using OpenQA.Selenium;
     using StorageManager.UiTests.Harness;
+    using StorageManager.UiTests.Harness.PageObjects;
 
-    public class LoginPageObject
+    public class LoginPageObject : BasePageObject
     {
         private readonly IWebDriver webDriver;
         private readonly IPageObjectFactory pageObjectFactory;

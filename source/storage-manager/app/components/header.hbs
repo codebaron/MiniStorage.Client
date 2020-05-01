@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-6 align-self-left">
                 <nav class="nav navbar-expand-lg navbar-dark theme-dark">
-                    <a class="navbar-brand" href="dashboard">
+                    <a class="navbar-brand" id="homeMenuLink" href="dashboard">
                         <img src="assets/images/logo.png" width="60" height="60" alt="storage master">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,16 +12,16 @@
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="rentals-dashboard">Rentals</a>
+                                <a class="nav-link" id="rentalsMenuLink" href="rentals-dashboard">Rentals</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="customers-dashboard">Customers</a>
+                                <a class="nav-link" id="customersMenuLink" href="customers-dashboard">Customers</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="store-dashboard">Store</a>
+                                <a class="nav-link" id="storeMenuLink" href="store-dashboard">Store</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="admin-dashboard">Admin</a>
+                                <a class="nav-link" id="adminMenuLink" href="admin-dashboard">Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-6">
                 <span class="header-buttons justify-content-end">
-                    <button {{on "click" (fn this.clickLogout)}} class="btn btn-primary btn-small btn-text theme-light">LOGOUT</button>
+                    <button id="logoutButton" {{on "click" (fn this.clickLogout)}} class="btn btn-primary btn-small btn-text theme-light">LOGOUT</button>
                 </span>
             </div>
         </div>

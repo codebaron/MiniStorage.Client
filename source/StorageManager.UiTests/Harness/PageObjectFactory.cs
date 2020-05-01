@@ -11,7 +11,7 @@ namespace StorageManager.UiTests.Harness
 
     public class PageObjectFactory : IPageObjectFactory
     {
-        private IWebDriver webDriver;
+        private readonly IWebDriver webDriver;
 
         public PageObjectFactory(IWebDriver webDriver)
         {

@@ -16,18 +16,19 @@ namespace StorageManager.UiTests.Scenarios.LoginAndViewDashboards
         {
             Ui.EnterUsername(input.Codebaron.Username)
               .EnterPassword(input.Codebaron.Password)
-              .ClickLogin();
+              .ClickLogin()
             ////.Verify(IsMainDashboard)
-            ////.ClickRentalMenu()
+              .ClickRentalsMenu()
             ////.Verify(IsRentalsDashboard)
-            ////.ClickCustomersMenu()
+            .ClickCustomersMenu()
             ////.Verify(IsCustomersDashboard)
-            ////.ClickStoreMenu()
+            .ClickStoreMenu()
             ////.Verify(IsStoreDashboard)
-            ////.ClickAdminMenu()
+            .ClickAdminMenu()
             ////.Verify(IsAdminDashboard)
-            ////.ClickHomeIcon()
+            .ClickHomeIcon()
             ////.Verify(IsMainDashboard));
+            .ClickLogout();
         }
     }
 }
