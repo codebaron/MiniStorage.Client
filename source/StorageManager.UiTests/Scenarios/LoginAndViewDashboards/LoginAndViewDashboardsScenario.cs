@@ -1,4 +1,3 @@
-using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using input = StorageManager.UiTests.Scenarios.LoginAndViewDashboards.LoginAndViewDashboardsInputData;
 

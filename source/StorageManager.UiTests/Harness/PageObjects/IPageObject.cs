@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StorageManager.UiTests.PageObjects
+namespace StorageManager.UiTests.Harness.PageObjects
 {
-    public class BasePageObject
+    public interface IPageObject
     {
     }
 }
