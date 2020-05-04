@@ -19,7 +19,6 @@ namespace StorageManager.UiTests.Harness
         }
 
         public T Create<T>()
-            where T : IPageObject
         {
             return (T)Activator.CreateInstance(typeof(T), this.webDriver, this);
         }

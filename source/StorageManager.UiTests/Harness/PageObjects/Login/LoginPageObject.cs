@@ -9,7 +9,7 @@ namespace StorageManager.UiTests.PageObjects
     using StorageManager.UiTests.Harness;
     using StorageManager.UiTests.Harness.PageObjects;
 
-    public class LoginPageObject : BasePageObject
+    public class LoginPageObject : BasePageObject<LoginPageObject>
     {
         public LoginPageObject(IWebDriver webDriver, IPageObjectFactory pageObjectFactory)
             : base(webDriver, pageObjectFactory)

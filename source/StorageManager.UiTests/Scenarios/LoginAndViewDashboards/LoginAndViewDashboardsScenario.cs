@@ -6,6 +6,7 @@
 namespace StorageManager.UiTests.Scenarios.LoginAndViewDashboards
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using assert = LoginAndViewDashboardsAssertData;
     using input = LoginAndViewDashboardsInputData;
 
     [TestClass]
@@ -17,18 +18,18 @@ namespace StorageManager.UiTests.Scenarios.LoginAndViewDashboards
             Ui.EnterUsername(input.Codebaron.Username)
               .EnterPassword(input.Codebaron.Password)
               .ClickLogin()
-              ////.Verify(IsMainDashboard)
+              .Verify(assert.MainDashboardIsDisplayed)
               .ClickRentalsMenu()
-            ////.Verify(IsRentalsDashboard)
-            .ClickCustomersMenu()
-            ////.Verify(IsCustomersDashboard)
-            .ClickStoreMenu()
-            ////.Verify(IsStoreDashboard)
-            .ClickAdminMenu()
-            ////.Verify(IsAdminDashboard)
-            .ClickHomeIcon()
-            ////.Verify(IsMainDashboard));
-            .ClickLogout();
+              .Verify(assert.RentalsDashboardIsDisplayed)
+              .ClickCustomersMenu()
+              .Verify(assert.CustomersDashboardIsDisplayed)
+              .ClickStoreMenu()
+              .Verify(assert.StoreDashboardIsDisplayed)
+              .ClickAdminMenu()
+              .Verify(assert.AdminDashboardIsDisplayed)
+              .ClickHomeIcon()
+              .Verify(assert.MainDashboardIsDisplayed)
+              .ClickLogout();
         }
     }
 }

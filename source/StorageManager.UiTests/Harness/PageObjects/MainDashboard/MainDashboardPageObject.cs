@@ -9,7 +9,7 @@ namespace StorageManager.UiTests.PageObjects
     using StorageManager.UiTests.Harness;
     using StorageManager.UiTests.Harness.PageObjects;
 
-    public class MainDashboardPageObject : BasePageObject
+    public class MainDashboardPageObject : BasePageObject<MainDashboardPageObject>
     {
         public MainDashboardPageObject(IWebDriver webDriver, IPageObjectFactory pageObjectFactory)
             : base(webDriver, pageObjectFactory)
@@ -27,6 +27,8 @@ namespace StorageManager.UiTests.PageObjects
         public IWebElement AdminMenuLink => this.WebDriver.FindElement(By.Id("adminMenuLink"));
 
         public IWebElement LogoutButton => this.WebDriver.FindElement(By.Id("logoutButton"));
+
+        public string PageSource => this.WebDriver.PageSource;
 
         public MainDashboardPageObject ClickHomeIcon()
         {

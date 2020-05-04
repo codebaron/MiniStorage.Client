@@ -6,9 +6,12 @@
 namespace StorageManager.UiTests.Harness.PageObjects
 {
     using System;
+    using System.Threading.Tasks;
     using OpenQA.Selenium;
+    using StorageManager.UiTests.Scenarios;
 
-    public class BasePageObject : IPageObject
+    public class BasePageObject<TPageObject>
+        where TPageObject : BasePageObject<TPageObject>
     {
         public BasePageObject(IWebDriver webDriver, IPageObjectFactory pageObjectFactory)
         {
@@ -20,9 +23,18 @@ namespace StorageManager.UiTests.Harness.PageObjects
 
         public IPageObjectFactory PageObjectFactory { get; private set; }
 
-        public void Verify()
+        public TPageObject Verify(IAssertionFactory<TPageObject> assertionFactory)
         {
-            throw new NotImplementedException();
+            if (assertionFactory == null)
+            {
+                throw new ArgumentNullException(nameof(assertionFactory));
+            }
+
+            var assertions = assertionFactory.GenerateAssertions((TPageObject)this);
+
+            Parallel.Invoke(assertions.ToArray());
+
+            return (TPageObject)this;
         }
     }
 }
